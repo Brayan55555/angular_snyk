@@ -1,0 +1,52 @@
+pipeline {
+    agent {
+        label "EC2_UBUNTU"
+    }
+    stages {
+        stage('Inicio') {
+            steps {
+                echo "Iniciando Escaneo"
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'sudo docker build -t proyecto1 .'
+            }
+        }
+        stage('Correr Imagen') {
+            steps {
+                sh "sudo docker run -d -it -p 80:80 proyecto1"
+            }
+        }
+        stage('Registrando Imagen') {
+            steps {
+                sh "sudo docker tagp royecto1 brayanumba/proyecto1:v1"
+            }
+        }
+        stage('Push') {
+            steps {
+                sh "sudo docker push brayanumba/proyecto1:v1"
+            }
+        }       
+        stage('Scan') {
+            steps {
+                script {
+                    try {
+                        sh "sudo docker scan proyecto1"
+                    } catch (err) {
+                        echo err.getMessage()
+                        echo "Error detected, but we will continue."
+                    }
+                }
+            }
+        }                  
+    }
+    post{
+        always{
+            emailext to: "brayanumbachisaba@gmail.com",
+            subject: "Test Email",
+            body: "Test",
+            attachLog: true
+        }
+    }
+}
