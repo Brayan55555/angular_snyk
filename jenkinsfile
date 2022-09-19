@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Registrando Imagen') {
             steps {
-                sh "sudo docker tagp proyecto1 brayanumba/proyecto1:v1"
+                sh "sudo docker tag proyecto1 brayanumba/proyecto1:v1"
             }
         }
         stage('Push') {
