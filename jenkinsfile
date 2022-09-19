@@ -8,14 +8,13 @@ pipeline {
                 echo "Iniciando Escaneo"
             }
         }
-        // stage('Build') {
-        //     steps {
-        //         sh 'sudo docker build -t proyecto1 .'
-        //     }
-        // }
+        stage('Build') {
+            steps {
+                sh 'sudo docker build -t proyecto1 .'
+            }
+        }
         stage('Correr Imagen') {
             steps {
-                sh "sudo docker stop xenodochial_cori"
                 sh "sudo docker run -d -it -p 80:80 proyecto1"
             }
         }
