@@ -27,6 +27,11 @@ pipeline {
             steps {
                 sh "sudo docker push brayanumba/proyecto1:v1"
             }
+        }
+        stage('Login') {
+            steps {
+                sh "sudo docker docker scan --login --token e9559302-f41a-4b42-a221-aa7035a60cdd"
+            }
         }       
         stage('Scan') {
             steps {
