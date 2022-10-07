@@ -66,7 +66,7 @@ resource "aws_security_group" "main" {
 
 resource "aws_key_pair" "deployer" {
   key_name   = "aws_key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCniI3qeHykvDXyTMx6qqfF6bKkXAVRKL1aVQasZ/YUgLCAfv9olF5lq/ySQ8a91qZPhEGg1UiP7cnLHbbOEUVEW5+jYnaG/yKMiw6BwkyBCYbdf8CyRQ1Miaclu0BLtyu4P7lA+XII8GfJvm5Vjt46tpMzTPlxz5Ag9S7DAe/0Grt3NibxF2wYxP8rK64bavHMgy5BadXixJn81WsEH2vzsETMVx3s0xiAFS1+VFntFkVoR7jYf6JIRJW176LhFljmVaZpBhHdjgI0cYRe8Z9JUtl/UzjFU4UJHmqM6llgNAFVkuJqyZv9SI/hW3Ecy5gVgfysJEEAc+ovTFfwISWV brayan@DESKTOP-PMTFEG8"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDI97mrEfZjs+ZgLk9IFm7g4LZWWD1l6qPxVSz5YxwYo+qljiSsCinsOOhV4zlhKmt0+13Wei8YtIHVkEA1HF3t2V9qy6kVQFX0QKF09JqPC2wfRdfqVWEukEHbCrj4wwU42mVBna873OhuEMS5qUU+V0XSKEcvmv3plCx9qvpEHOCKMWZ3x5bsZK/0dpzha7X56QOAlU1xQc9ZDVjJsAOXMQmKmrIWvWVEk3SVtnxY7Esvg98WtL14nx4vYzF3T9L6pmngqCdiFJD4cLU9yYXUJ1X7N3jLUMeEcyAEac6kiMBuV/N7hv3h3QntWkkjoOmeUwjjlFUUcYun0mAUXw2z brayan@LAPTOP-9JKE2OM"
 }
 
 output "public_ip" {
