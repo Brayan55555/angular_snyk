@@ -30,7 +30,7 @@ resource "aws_instance" "ec2_example" {
       type        = "ssh"
       host        = self.public_ip
       user        = "ubuntu"
-      private_key = file("/home/brayan/Jhooq/Keys/aws/aws_key")
+      private_key = file("/home/brayan/Jhooq/keys/aws/aws_key")
       timeout     = "4m"
    }
 }
