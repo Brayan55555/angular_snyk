@@ -47,8 +47,7 @@ pipeline {
         }
         stage('Apply') {
             steps {
-                sh "cd modules/ec2"
-                sh "sudo terraform apply -auto-approve -input=false"
+                sh "cd modules/ec2; sudo terraform init; sudo terraform apply -auto-approve -input=false"
             }   
         }                  
     }
