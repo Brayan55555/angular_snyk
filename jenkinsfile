@@ -47,8 +47,8 @@ pipeline {
         }
         stage('Apply') {
             steps {
-                sh 'cd angular_snyk/modules/ec2'
-                sh 'sudo terraform apply -auto-approve -input=false'
+                sh "cd angular_snyk/modules/ec2"
+                sh "sudo terraform apply -auto-approve -input=false"
             }                 
     }
     post{
