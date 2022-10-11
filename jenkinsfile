@@ -13,11 +13,11 @@ pipeline {
                 sh 'sudo docker build -t proyecto1 .'
             }
         }
-        stage('Correr Imagen') {
-            steps {
-                sh "sudo docker run -d -it -p 80:80 proyecto1"
-            }
-        }
+        // stage('Correr Imagen') {
+        //     steps {
+        //         sh "sudo docker run -d -it -p 80:80 proyecto1"
+        //     }
+        // }
         stage('Registrando Imagen') {
             steps {
                 sh "sudo docker tag proyecto1 brayanumba/proyecto1:v1"
@@ -47,7 +47,7 @@ pipeline {
         }
         stage('Apply') {
             steps {
-                sh "cd modules/ec2; sudo terraform init; sudo terraform apply -auto-approve -input=false"
+                sh "cd modules/ec2; sudo terraform init; sudo terraform apply -auto-approve"
             }   
         }                  
     }
